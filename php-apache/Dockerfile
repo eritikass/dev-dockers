@@ -84,6 +84,13 @@ RUN set -xe \
 		xml \
 		sockets \
 		intl \
+		ctype \
+		ctype \
+		calendar \
+		exif \
+		session \
+		ftp \
+		simplexml \
     # gd need some extra care
 	&& docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install gd \
