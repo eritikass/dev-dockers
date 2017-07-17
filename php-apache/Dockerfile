@@ -1,4 +1,8 @@
-FROM php:7.1-apache as builder
+ARG PHP_VERSION="7.1"
+
+######## builder start ########
+
+FROM php:${PHP_VERSION}-apache AS builder
 
 RUN apt-get update \
 	&& apt-get install -y \
@@ -31,7 +35,7 @@ RUN git clone https://github.com/eritikass/mod_xsendfile /tmp/apache-mod_xsendfi
 
 ######## base start ########
 
-FROM php:7.1-apache
+FROM php:${PHP_VERSION}-apache
 LABEL maintainer="eritikass@gmail.com"
 
 #RUN mkdir -p /usr/lib/apache2/modules /etc/apache2/mods-enabled /etc/apache2/mods-available
