@@ -1,4 +1,5 @@
 FROM openjdk:8-jre
+LABEL maintainer="eritikass@gmail.com"
 
 ENV SOLR_VERSION 4.7.2
 ENV SOLR solr-$SOLR_VERSION
